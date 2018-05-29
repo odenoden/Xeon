@@ -22,7 +22,8 @@
         <p>{{XEM_Price}} XEM</p>
         
         <h2>ご注文</h2>
-        <button v-on:click="handleClick">現在価格で確定</button>
+        <button v-on:click="httpGet(zaif_url)">現在価格で確定</button>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="main.js"></script>
