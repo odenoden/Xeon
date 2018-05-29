@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <h1>XEMReceiver for oden</h1>
+    <div id="app">
+        <!-- この#appの内側にテンプレートを書き込んでいく -->
+        <h2>注文情報</h2>
+        <h3>伝票番号</h3>
+        <input v-model="message1">
+        <h3>価格(JPY)</h3>
+        <input v-model="message2">
+
+        <h2>価格情報</h2>
+        <h3>現在のレート</h3>
+        <p>{{XEM_Price}} 円 / XEM</p>
+        <h3>XEM価格(参考値)</h3>
+        <p>{{XEM_Price}} XEM</p>
+        
+        <h2>ご注文</h2>
+        <button v-on:click="handleClick">現在価格で確定</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
