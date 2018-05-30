@@ -8,6 +8,14 @@ var app = new Vue({
     },
 
     created () {
+        axios.get('http://23.228.67.85:7890/heartbeat')
+        .then(function (response) {
+            alert(response.data.message);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
         axios.get(this.xembook_url)
         .then(function (response) {
             app.XEM_Rate = Number(response.data.zaif);
@@ -15,6 +23,7 @@ var app = new Vue({
         .catch(function (error) {
             console.log(error);
         });
+
     },
 
     methods: {
