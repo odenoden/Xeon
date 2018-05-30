@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Vue.js App</title>
     <link href="main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
     <h1>XEMReceiver for oden</h1>
@@ -17,16 +18,16 @@
 
         <h2>価格情報</h2>
         <h3>現在のレート</h3>
-        <p>{{XEM_Price}} 円 / XEM</p>
+        <p>{{XEM_Rate}} 円 / XEM</p>
         <h3>XEM価格(参考値)</h3>
         <p>{{XEM_Price}} XEM</p>
-        <p>{{result.vwap}}</p>
         
         <h2>ご注文</h2>
-        <button v-on:click="getPosts(zaif_url)">現在価格で確定</button>
+        <button v-on:click="getXEMPrice()">現在価格で確定</button>
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
