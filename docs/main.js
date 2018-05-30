@@ -7,23 +7,34 @@ var app = new Vue({
         message1: '',
         message2: '',
         show: true,
-        zaif_url: 'https://api.zaif.jp/api/1/ticker/xem_jpy'
+        zaif_url: 'https://api.zaif.jp/api/1/ticker/xem_jpy',
+        result: '--'
     },
 
-    methods: {
+    mounted() {
+        axios.get(zaif_url)
+        .then(response => {this.result = response.data});
+      },
+
+      methods: {
+
         handleClick: function (message) {
             alert(message) // [object HTMLButtonElement]
         },
 
         // GET request
-        httpGet : function(url){
-            fetch('https://api.zaif.jp/api/1/ticker/xem_jpy').then(function(response) {
-                alert('aaa')
-                return response.text();
-              }).then(function(text) {
-                // textに文字列で結果が渡される
-                alert('aaa')
-              });
+        getPosts(url) {
+            alert(url);
+            axios.get('https://api.zaif.jp/api/1/ticker/xem_jpy')
+            .then(function (response) {
+                alert('aaaa');
+              console.log(response);
+            })
+            .catch(function (error) {
+                alert(error.message);
+              console.log(error);
+            });
+            alert('test1');
         }
     }
 })
