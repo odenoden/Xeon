@@ -10,7 +10,7 @@ var app = new Vue({
     created () {
         axios.get(this.xembook_url)
         .then(function (response) {
-            app.XEM_Rate = Number(response.data.zaif)
+            app.XEM_Rate = Number(response.data.zaif);
         })
         .catch(function (error) {
             console.log(error);
